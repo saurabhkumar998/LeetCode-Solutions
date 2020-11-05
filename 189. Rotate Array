@@ -1,0 +1,27 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k%n;    //after every n times the array is returning to its original state, hence its better to do k%n times rather than doing k times
+        
+        reverse(nums.begin(), nums.end());              // reversing whole array    i.e [1,2,3,4,5,6,7,8] ---> [8,7,6,5,4,3,2,1]
+        reverse(nums.begin(), nums.begin()+k);          // reversing the array from nums[0] to nums[0+k] i.e  [8,7,6,5,4,3,2,1] ---> [6,7,8,5,4,3,2,1]
+        reverse(nums.begin()+k,nums.end());             // now reversing the remaining array                  [6,7,8,5,4,3,2,1]   ----> [6,7,8,1,2,3,4,5]
+       
+    }
+};
+
+
+***** k = k%n (explained) ***********
+
+let array is [1,2,3]
+size() of array is 3
+
+let k = 3
+
+for k = 1 :  [1,2,3] ----> [3,1,2]
+for k = 2 :  [3,1,2] ----> [2,3,1]
+for k = 3 :  [2,3,1] ----> [1,2,3]  we are getting the actual array after every n iteration where k == n
+hence for every k = m*n  the array will repeat its actual value
+instead of doing the iteration k times we are doing it k%n times.
+k = k%n will give the actual numbers of iteration to do to get the required output.
