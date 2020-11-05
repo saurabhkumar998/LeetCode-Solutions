@@ -12,7 +12,7 @@ public:
 };
 
 
-***** k = k%n (explained) ***********
+/* ***** k = k%n (explained) ***********
 
 let array is [1,2,3]
 size() of array is 3
@@ -25,3 +25,4 @@ for k = 3 :  [2,3,1] ----> [1,2,3]  we are getting the actual array after every 
 hence for every k = m*n  the array will repeat its actual value
 instead of doing the iteration k times we are doing it k%n times.
 k = k%n will give the actual numbers of iteration to do to get the required output.
+*/
