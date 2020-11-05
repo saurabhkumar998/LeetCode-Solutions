@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+       vector<int> x;
+        for(int i=0, j=n ; i<n ; i++, j++){
+            x.push_back(nums[i]);
+            x.push_back(nums[j]);
+        }
+        return x;
+    }
+};
+
+/*  
+ Explanation of "  for(int i=0, j=n ; i<n ; i++, j++) " :
+ 
+ for loop consist of three things (initialize, validate, update), so we can initialize, validate and update any number of statement within for loop .
+ here in this for loop we have initialized two variables i and j, we are validating i only because when the i do not validate the loop will automatically terminate
+ hence no need to write the validation of j variable. respectively in the update field we are updating the both the variables i and j
+ 
+  x.push_back(nums[i]);  --> this statement pushes the  ith element of nums in the x vector
+   x.push_back(nums[j]); --> this statement pushes the jth element of nums in the x vector
+   
+  */
