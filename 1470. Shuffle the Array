@@ -21,3 +21,9 @@ public:
    x.push_back(nums[j]); --> this statement pushes the jth element of nums in the x vector
    
   */
+
+
+
+
+
+//      https://leetcode.com/problems/shuffle-the-array/
