@@ -26,3 +26,9 @@ hence for every k = m*n  the array will repeat its actual value
 instead of doing the iteration k times we are doing it k%n times.
 k = k%n will give the actual numbers of iteration to do to get the required output.
 */
+
+
+
+
+
+//      https://leetcode.com/problems/rotate-array/
