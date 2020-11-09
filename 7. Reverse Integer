@@ -1,0 +1,27 @@
+//  Link: https://leetcode.com/problems/reverse-integer/
+
+
+
+class Solution {
+public:
+    int reverse(int x) {
+        long long int rem, sum =0; 
+        int y = abs(x);
+        
+        while(y>0){
+            rem = y%10;
+            sum = sum*10 + rem;
+            y = y/10;
+        }
+        if(sum > INT_MAX){
+            return 0;
+        }
+        
+        if(x < 0){
+            return (-1)*(sum);
+        }
+        else{
+            return sum;
+        }
+    }
+};
