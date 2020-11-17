@@ -1,0 +1,42 @@
+// Link:  https://leetcode.com/problems/trapping-rain-water/
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int n = height.size();
+        if(n == 0){
+            return 0;
+        }
+        
+        int total_water = 0;
+        int left_max = 0;
+        int right_max = 0;
+        
+        int lmax[n];
+        int rmax[n];
+        
+        
+        for(int i=0; i<n; i++){
+            left_max = max(left_max, height[i]);
+            lmax[i] = left_max;
+        }
+        for(int i=n-1; i>=0; i--){
+            right_max = max(right_max, height[i]);
+            rmax[i] = right_max;
+        }
+        
+        // for(int i=0; i<n; i++){
+        //     cout<<lmax[i]<<" ";
+        // }
+        //  cout<<endl;
+        // for(int i=0; i<n; i++){
+        //     cout<<rmax[i]<<" ";
+        // }
+        
+        for(int i=0; i<n; i++){
+            total_water = total_water + (min(lmax[i], rmax[i]) - height[i]);
+        }
+        
+        return total_water;
+    }
+};
