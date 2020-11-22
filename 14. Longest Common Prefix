@@ -11,14 +11,14 @@ public:
         
      string str = "";
         for(int i=0; i<strs[0].length(); i++){
-            char character = strs[0][i];
-            for(int j=0; j<strs.size(); j++){
-                if(strs[j][i] != character){
+            char character = strs[0][i];                // saving the value of characters of the first string to compare with the others
+            for(int j=0; j<strs.size(); j++){           // this loop will run till the size of the vector
+                if(strs[j][i] != character){            // checking if the character of the string is common in all of not, if not then we are returning the 'str'.
                     return str;
                 }
                 
             }
-            str = str + character;
+            str = str + character;                      // if all the character of each string is matching then concatanating the character to 'str'.
         }
         return str;
     }
